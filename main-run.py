@@ -21,7 +21,7 @@ api = Api(app
         
 @app.route(Config.INDEX_URL, methods=['GET'])
 def app_body():
-    return render_template('index.html', Pic=image)
+    return render_template('index.html')
 
 # ENTRY POINT
 @app.route('/apiModuleNasa')
