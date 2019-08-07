@@ -18,7 +18,7 @@ def request_nasa_api(API_TOKEN):
     reader = Links.read()
     responimg = json.loads(reader.decode('utf-8'))
     webbrowser.register('chrome', None, webbrowser.GenericBrowser('chrome'), 1)
-    return webbrowser.get('chrome').open(Pic = responimg['url'])
+    return webbrowser.get('chrome').open('index.heml',Pic = responimg['url'])
     
 #     return render_template('index.html', Pic = responimg['url'])
 
