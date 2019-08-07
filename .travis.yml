@@ -1,9 +1,6 @@
 language: python
 python:
 - '3.7'
-- 3.7-dev
-- 3.8-dev
-- nightly
 install:
 - pip3 install -r requirements.txt
 script:
@@ -11,5 +8,5 @@ script:
 deploy:
   - provider: heroku
     api_key:
-      secure:
+      secure: mLM/ESaCiMr1YQoalMsYtmha5zMJ87lF1/nCtDjMmZaH3Nq0GXov/Ac5SVVypofwZvZsjkiyndxQ5fPySDduCFmXRQkt1XTDdamDVKR0EAp+m8y2+s/ywWaCgnKopaXjUpVaCdsuGsgGgb3OlRu+y7rInDTcnwlWuye6eS8bgB8ca406DSLXwIVxb1bp+ezhAfDMQGyhNKruNlb5qCu4G0S/laA+natMn+ZpbpTD+qdIU1fQIjb6YOljzDCPWfewZ4LQ7nSiJ51nEVD87O9kUUlf8njKAwvjtvJSf/oxsA9DfSOvx3TOulSP9GtUmBQdYUgfzPT+DT87SuldftuCCCZuf5Kq4Y/FT/d//0cWN32AQP0olCWJKPbksxz0wpdmeraVVUXu6cHvGH0Q1yv/qFHc/9fMq7qvtKXcvCN+HkoQ0DdkUzMdbb8mRgHZKlD3rt2WERKdcFBKvN+SynbwIgz+Izsr72uFg6FMGWgzOo/J1aG7RL6USXXJKW9fyOJyGhMJIXfsk2JY5wwxR2zQpD60MI236L/Y4Kz5pEC7Eo9GlfYxcYzrZrVUdyo+86VyelhUmZzO5ZHTC2eZmImLuVQ0obXvMi7aX/ZUT32A1OehIX/TviNfmTFOxd7YWnN2O70wKVOu03Xld0LHXYzjP3ByP5U0KYbiJ0QmlNyLgpk=
     app: nasa-api-app
