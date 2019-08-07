@@ -22,14 +22,14 @@ api = Api(app
         
 @app.route(Config.INDEX_URL, methods=['GET'])
 def app_body():
-    return render_template('index.html')
+    return render_template('index.html', Pic = responimg['hdurl'],)
 
 # ENTRY POINT
 @app.route('/apiModuleNasa')
 def apiModuleNasa():
     API_TOKEN = request.args.get('API_TOKEN')
     response = response_request_nasa_api(API_TOKEN)
-    return response
+    return render_template('index.html', Pic = responimg['hdurl'])
 #
 # API → ENTRY POINT
 ###################
