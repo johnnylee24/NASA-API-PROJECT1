@@ -29,7 +29,7 @@ def app_body():
 def apiModuleNasa():
     API_TOKEN = request.args.get('API_TOKEN')
     response = response_request_nasa_api(API_TOKEN)
-    return webbrowser.open(response)
+    return response
 #
 # API → ENTRY POINT
 ###################
