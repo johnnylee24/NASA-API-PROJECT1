@@ -6,7 +6,7 @@ import requests
 import urllib.request
 import ssl
 import json
-import webbrowser
+import webbrowser as wb
 from flask import Flask, render_template, request, Response
 
 def request_nasa_api(API_TOKEN):
@@ -17,8 +17,9 @@ def request_nasa_api(API_TOKEN):
     Links = urllib.request.urlopen(request_url, context = this_context)
     reader = Links.read()
     responimg = json.loads(reader.decode('utf-8'))
-    webbrowser.register('chrome', None, webbrowser.GenericBrowser('chrome'), 1)
-    return webbrowser.get('chrome').open('index.heml')
+    Pic = responimg['url']
+    wb.get('chrome %s').open_new_tab(Pic)
+
     
 #     return render_template('index.html', Pic = responimg['url'])
 
