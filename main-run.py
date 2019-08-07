@@ -26,10 +26,20 @@ def app_body():
 
 # ENTRY POINT
 @app.route('/apiModuleNasa')
-def apiModuleNasa():
-    API_TOKEN = request.args.get('API_TOKEN')
-    response = response_request_nasa_api(API_TOKEN)
-    return render_template('index.html', Pic = responimg['hdurl'])
+# def apiModuleNasa():      
+# #     API_TOKEN = request.args.get('API_TOKEN')
+# #     response = response_request_nasa_api(API_TOKEN)
+# #     return response
+def request_nasa_api(API_TOKEN):
+    this_context = ssl.SSLContext()
+    BASE_URL = "https://api.nasa.gov/planetary/apod?api_key="
+    request_url = BASE_URL + API_TOKEN
+    # response = requests.get(request_url)
+    Link = urllib.request.urlopen(request_url,context = this_context)
+    reader = Link.read()
+    finished = json.loads(reader.decode('utf-8'))
+    image = finished['hdurl']
+    return render_template('index.html', picture=image)
 #
 # API → ENTRY POINT
 ###################
