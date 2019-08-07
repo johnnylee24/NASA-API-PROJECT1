@@ -3,6 +3,10 @@
 import sys
 import os
 import webbrowser
+import requests
+import ssl
+import json
+import urllib.request
 from flask import Flask, render_template, request, Response
 from flask_restplus import Api, Resource, fields, reqparse
 from config import Config
@@ -27,6 +31,9 @@ def app_body():
 # ENTRY POINT
 @app.route('/apiModuleNasa')
 def apiModuleNasa():
+    this_context = ssl.SSLContext()
+    BASE_URL = "https://api.nasa.gov/planetary/apod?api_key="
+    request_url = BASE_URL + API_TOKEN
     API_TOKEN = request.args.get('API_TOKEN')
     response = response_request_nasa_api(API_TOKEN)
     Links = urllib.request.urlopen(request_url, context = this_context)
