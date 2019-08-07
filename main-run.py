@@ -29,7 +29,10 @@ def app_body():
 def apiModuleNasa():
     API_TOKEN = request.args.get('API_TOKEN')
     response = response_request_nasa_api(API_TOKEN)
-    return response
+    Links = urllib.request.urlopen(request_url, context = this_context)
+    reader = Links.read()
+    responimg = json.loads(reader.decode('utf-8')) responimg = json.loads(reader.decode('utf-8'))  
+    return render_template('index.html', responimg['hdurl'])
 #
 # API → ENTRY POINT
 ###################
