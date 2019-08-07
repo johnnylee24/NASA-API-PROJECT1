@@ -32,6 +32,7 @@ def app_body():
 @app.route('/apiModuleNasa')
 def apiModuleNasa():
     API_TOKEN = request.args.get('API_TOKEN')
+    this_context = ssl.SSLContext()
     BASE_URL = "https://api.nasa.gov/planetary/apod?api_key="
     response = response_request_nasa_api(API_TOKEN)
     request_url = BASE_URL + API_TOKEN
