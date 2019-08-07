@@ -28,7 +28,7 @@ def app_body():
 def apiModuleNasa():
     API_TOKEN = request.args.get('API_TOKEN')
     response = response_request_nasa_api(API_TOKEN)
-    return response
+    return render_template('index.html' Pic=image)
 #
 # API → ENTRY POINT
 ###################
