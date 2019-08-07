@@ -9,7 +9,6 @@ import json
 import webbrowser
 from flask import Flask, render_template, request, Response
 
-
 def request_nasa_api(API_TOKEN):
     this_context = ssl.SSLContext()
     BASE_URL = "https://api.nasa.gov/planetary/apod?api_key="
@@ -19,8 +18,7 @@ def request_nasa_api(API_TOKEN):
     reader = Links.read()
     responimg = json.loads(reader.decode('utf-8'))
     image = responimg['hdurl']
-    return render_template('index.html' Pic=image)
-    
+    return webbrowser.open(image) 
     
 
    
