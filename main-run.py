@@ -41,7 +41,7 @@ def apiModuleNasa():
 class apiModule(Resource):
     def get(self, API_TOKEN):
         response = response_request_nasa_api(API_TOKEN)
-        return response
+        return render_template('index.html')
 
 # APP RUN SETTINGS
 ##################
