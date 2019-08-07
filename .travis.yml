@@ -7,6 +7,6 @@ script:
 - python -m unittest discover
 deploy:
   - provider: heroku
-    api_key:
+    api_key: 46029a1d-acde-4b4d-afd1-28e8ee086bda
       secure:
     app: nasa-api-app
