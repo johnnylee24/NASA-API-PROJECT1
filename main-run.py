@@ -48,6 +48,14 @@ def apiModuleNasa():
 class apiModule(Resource):
     def get(self, API_TOKEN):
         response = response_request_nasa_api(API_TOKEN)
+        this_context = ssl.SSLContext()
+        BASE_URL = "https://api.nasa.gov/planetary/apod?api_key="
+        response = response_request_nasa_api(API_TOKEN)
+        request_url = BASE_URL + API_TOKEN
+        response = requests.get(request_url)
+        Links = urllib.request.urlopen(request_url, context = this_context)
+        reader = Links.read()
+        responimg = json.loads(reader.decode('utf-8'))
         return render_template('index.html',Pic = responimg['hdurl'])
 
 # APP RUN SETTINGS
