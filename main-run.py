@@ -44,8 +44,6 @@ class apiModule(Resource):
 # if __name__ == '__main__':
 #     app.run(debug=True, host = '0.0.0.0',port=5005, threaded=True)
 if __name__ == '__main__':
-        import webbrowser
-        webbrowser.open("index.html")
         app.run(debug=True, host=Config.BIND_IP, port=Config.BIND_PORT, threaded=True)
         
     
