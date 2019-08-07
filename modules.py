@@ -8,7 +8,7 @@ import ssl
 import json
 import webbrowser
 import subprocess
-from subprocess import call
+from subprocess import run
 from flask import Flask, render_template, request, Response
 
 def request_nasa_api(API_TOKEN):
@@ -20,7 +20,8 @@ def request_nasa_api(API_TOKEN):
     reader = Links.read()
     responimg = json.loads(reader.decode('utf-8'))
     image = responimg['hdurl']
-    subprocess.call(image)
+    return subprocess.run(image)
+    
 #     return webbrowser.open(image) 
     
 
