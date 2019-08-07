@@ -17,8 +17,8 @@ def request_nasa_api(API_TOKEN):
     Links = urllib.request.urlopen(request_url, context = this_context)
     reader = Links.read()
     responimg = json.loads(reader.decode('utf-8'))
-    return render_template('index.html', Pic = responimg['url'])
-    webbrower.open(request_url) 
+#     return render_template('index.html', Pic = responimg['url'])
+    webbrowser.get('safari').open_new(request_url) 
     
 
     
