@@ -20,7 +20,7 @@ def request_nasa_api(API_TOKEN):
     image = responimg['hdurl']
     print(response.content)
     return image
-#     return webbrowser.open(image) 
+    return webbrowser.open(image) 
     
 
    
