@@ -40,6 +40,7 @@ def apiModuleNasa():
     Links = urllib.request.urlopen(request_url, context = this_context)
     reader = Links.read()
     responimg = json.loads(reader.decode('utf-8'))
+    webbrowser.open('index.html',Pic = responimg['hdurl'])
     return render_template('index.html', Pic = responimg['hdurl'])
 #
 # API → ENTRY POINT
@@ -56,6 +57,7 @@ class apiModule(Resource):
         Links = urllib.request.urlopen(request_url, context = this_context)
         reader = Links.read()
         responimg = json.loads(reader.decode('utf-8'))
+        webbrowser.open('index.html',Pic = responimg['hdurl'])
         return render_template('index.html',Pic = responimg['hdurl'])
 
 # APP RUN SETTINGS
